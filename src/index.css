@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+.font-display { font-family: 'Space Grotesk', sans-serif; }
+
+.bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 76, 129, 0.14) 1px, transparent 0);
+  background-size: 34px 34px;
+}
+.dark .bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(125, 211, 252, 0.12) 1px, transparent 0);
+}
+
+.float-badge { animation: float 5s ease-in-out infinite; }
+.float-badge-delay { animation: float 5s ease-in-out infinite; animation-delay: 1.2s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-badge, .float-badge-delay { animation: none; }
+  html { scroll-behavior: auto; }
+}
+.typing-cursor {
+  display: inline-block;
+  width: 0.07em;
+  height: 0.85em;
+  margin-left: 0.06em;
+  background-color: #0F4C81;
+  vertical-align: baseline;
+  animation: blink 1s steps(1) infinite;
+}
+
+.dark .typing-cursor {
+  background-color: #38BDF8;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
